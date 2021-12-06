@@ -10,4 +10,6 @@ public interface IOrderService {
 
 
     String getOrderByUser(Integer userId);
+
+    String getOrderList();
 }

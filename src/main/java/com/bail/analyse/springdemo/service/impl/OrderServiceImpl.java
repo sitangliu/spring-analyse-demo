@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 @Service
 public class OrderServiceImpl implements IOrderService {
 
-    @Value("order.sku")
+    @Value("${order.sku}")
     private String orderSku;
 
     @Resource
@@ -34,7 +34,7 @@ public class OrderServiceImpl implements IOrderService {
 
     @Override
     public String getOrderList() {
-        return "order list";
+        return "order.sku:"+orderSku+"-order list";
     }
 
 

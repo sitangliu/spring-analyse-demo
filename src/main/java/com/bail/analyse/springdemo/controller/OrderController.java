@@ -16,19 +16,25 @@ import javax.annotation.Resource;
 @RequestMapping("bail/order")
 public class OrderController {
 
-//    @Resource
-//    private IOrderService orderService;
+    @Resource
+    private IOrderService orderService;
 
     @GetMapping("/getOrderDetail")
     public String getOrderDetail(Integer orderId){
-//        String order = orderService.getOrderById(orderId);
-        return null;
+        String order = orderService.getOrderById(orderId);
+        return order;
     }
 
 
     @GetMapping("/getOrderList")
     public String getOrderList(){
-//        String orderList = orderService.getOrderList();
-        return null;
+        String orderList = orderService.getOrderList();
+        return orderList;
+    }
+
+    @GetMapping("/getOrderByUser")
+    public String getOrderByUser(Integer userId){
+        String order = orderService.getOrderByUser(userId);
+        return order;
     }
 }
